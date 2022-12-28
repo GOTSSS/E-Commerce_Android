@@ -13,4 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "ecommerce"
-include ':app'
+include ':core'
+include ':data'
+include ':domain'
+include ':presentation'
