@@ -64,7 +64,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
+        kotlinCompilerExtensionVersion = Versions.composeCompiler
     }
     packagingOptions {
         resources {
@@ -79,7 +79,9 @@ dependencies {
 
     implementation(AppImplementationDependencies.androidCore)
     implementation(AppImplementationDependencies.lifeCycle)
+    implementation(platform(AppImplementationDependencies.composeBom))
     implementation(AppImplementationDependencies.activityCompose)
+    implementation(AppImplementationDependencies.viewmodelCompose)
     implementation(AppImplementationDependencies.composeMaterial)
     implementation(AppImplementationDependencies.composeUi)
     implementation(AppImplementationDependencies.composeUiToolingPreview)
@@ -91,6 +93,7 @@ dependencies {
     testImplementation(AppTestImplementationDependencies.hilt)
     kapt(AppTestKaptDependencies.hilt)
     androidTestImplementation(AppAndroidTestImplementationDependencies.testJUnit)
+    androidTestImplementation(platform(AppAndroidTestImplementationDependencies.composeBom))
     androidTestImplementation(AppAndroidTestImplementationDependencies.composeJUnit)
     androidTestImplementation(AppAndroidTestImplementationDependencies.espresso)
     androidTestImplementation(AppAndroidTestImplementationDependencies.hilt)

@@ -16,5 +16,5 @@ rootProject.name = "ecommerce"
 include(
     ":app",
     ":domain",
-        ":data",
+    ":data",
 )

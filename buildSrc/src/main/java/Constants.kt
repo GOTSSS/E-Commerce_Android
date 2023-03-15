@@ -7,6 +7,6 @@ object Constants {
     const val versionCode = 1
     const val versionName = "1.0.0"
     const val namespace = "com.github.gotsss"
-    const val jvmTarget = "1.8"
-    val javaTarget = JavaVersion.VERSION_1_8
+    const val jvmTarget = "11"
+    val javaTarget = JavaVersion.VERSION_11
 }
