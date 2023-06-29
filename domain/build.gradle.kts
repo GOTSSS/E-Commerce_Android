@@ -9,4 +9,5 @@ java {
 }
 dependencies {
     implementation(DomainImplementationDependencies.javaX)
+    implementation(DomainImplementationDependencies.kotlinCoroutines)
 }
