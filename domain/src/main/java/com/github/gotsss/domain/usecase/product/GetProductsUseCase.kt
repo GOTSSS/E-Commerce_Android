@@ -1,16 +1,19 @@
 package com.github.gotsss.domain.usecase.product
 
-import com.github.gotsss.domain.entity.AppResult
+import com.github.gotsss.domain.base.AppResult
+import com.github.gotsss.domain.base.FlowUseCase
 import com.github.gotsss.domain.entity.FilterEntity
 import com.github.gotsss.domain.entity.product.ProductItemEntity
 import com.github.gotsss.domain.repository.ProductRepository
-import com.github.gotsss.domain.usecase.BaseUseCase
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class GetProductsUseCase @Inject constructor(
     private val productRepository: ProductRepository
-): BaseUseCase<FilterEntity, List<ProductItemEntity>?>() {
+): FlowUseCase<FilterEntity, List<ProductItemEntity>?>() {
 
-    override suspend fun execute(parameters: FilterEntity): AppResult<List<ProductItemEntity>?> =
-        productRepository.getProducts(parameters)
+    override suspend fun execute(
+        parameters: FilterEntity,
+        refresh: Boolean
+    ): Flow<AppResult<List<ProductItemEntity>?>> = productRepository.getProducts(parameters)
 }
